@@ -1,0 +1,167 @@
+<details open="false">
+    <summary>技能</summary>
+    <table>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">計算方法</th>
+            <th scope="col">現在値</th>
+            <th scope="col">補正</th>
+        </tr>
+        <tr>
+            <th scope="row">職業P</th>
+            <th>
+                <select name="cal_type" id="cal_type" style="width: 100px;">
+                    <option value="0">EDU×20</option>
+                    <option value="1">STR×10+EDU×10</option>
+                    <option value="2">CON×10+EDU×10</option>
+                    <option value="3">POW×10+EDU×10</option>
+                    <option value="4">DEX×10+EDU×10</option>
+                    <option value="5">APP×10+EDU×10</option>
+                    <option value="6">SIZ×10+EDU×10</option>
+                    <option value="7">INT×10+EDU×10</option>
+                </select>
+            </th>
+            <th>
+                <input name="job_point" id="job_point" style="width: 100px;" disabled>
+            </th>
+            <th>
+                <input type="number" name="job_point_add" id="job_point_add" style="width: 100px;">
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">興味P</th>
+            <th>
+                <label style="font-weight: normal;">INT×10</label>
+            </th>
+            <th>
+                <input name="interest_point" id="interest_point" style="width: 100px;" disabled>
+            </th>
+            <th>
+                <input type="number" name="interest_point_add" id="interest_point_add" style="width: 100px;">
+            </th>
+        </tr>
+    </table>
+
+    <details open="true">
+        <summary>戦闘技能</summary>
+        <input type="hidden" name="battle_skills_json" id="battle_skills_json" value="test">
+        <table id="battle_skills_table" class="battle_skills">
+            <tr>
+                <th scope="col">成長</th>
+                <th scope="col" style="width: 150px;">技能名</th>
+                <th scope="col" style="width: 50px;">初期値</th>
+                <th scope="col" style="width: 50px;">職業P</th>
+                <th scope="col" style="width: 50px;">興味P</th>
+                <th scope="col" style="width: 50px;">成長分</th>
+                <th scope="col" style="width: 50px;">その他</th>
+                <th scope="col" style="width: 50px;">合計</th>
+            </tr>
+            {% for skill in skills.battle_skills %}
+            {% include "investigator/skill.html" %}
+            {% endfor %}
+        </table>
+        <div style="margin-left: 463px;">
+            <button type="button" onclick="add_battle_skills()">追加</button>
+        </div>
+    </details>
+
+    <br>
+
+    <details open="true">
+        <summary>探索技能</summary>
+        <input type="hidden" name="search_skills_json" id="search_skills_json" value="">
+        <table id="search_skills_table" class="search_skills">
+            <tr>
+                <th scope="col">成長</th>
+                <th scope="col" style="width: 150px;">技能名</th>
+                <th scope="col" style="width: 50px;">初期値</th>
+                <th scope="col" style="width: 50px;">職業P</th>
+                <th scope="col" style="width: 50px;">興味P</th>
+                <th scope="col" style="width: 50px;">成長分</th>
+                <th scope="col" style="width: 50px;">その他</th>
+                <th scope="col" style="width: 50px;">合計</th>
+            </tr>
+            {% for skill in skills.search_skills %}
+            {% include "investigator/skill.html" %}
+            {% endfor %}
+        </table>
+        <div style="margin-left: 463px;">
+            <button type="button" onclick="add_search_skills()">追加</button>
+        </div>
+    </details>
+
+    <br>
+
+    <details open="true">
+        <summary>行動技能</summary>
+        <input type="hidden" name="action_skills_json" id="action_skills_json" value="">
+        <table id="action_skills_table" class="action_skills">
+            <tr>
+                <th scope="col">成長</th>
+                <th scope="col" style="width: 150px;">技能名</th>
+                <th scope="col" style="width: 50px;">初期値</th>
+                <th scope="col" style="width: 50px;">職業P</th>
+                <th scope="col" style="width: 50px;">興味P</th>
+                <th scope="col" style="width: 50px;">成長分</th>
+                <th scope="col" style="width: 50px;">その他</th>
+                <th scope="col" style="width: 50px;">合計</th>
+            </tr>
+            {% for skill in skills.action_skills %}
+            {% include "investigator/skill.html" %}
+            {% endfor %}
+        </table>
+        <div style="margin-left: 463px;">
+            <button type="button" onclick="add_action_skills()">追加</button>
+        </div>
+    </details>
+
+    <br>
+
+    <details open="true">
+        <summary>交渉技能</summary>
+        <input type="hidden" name="interpersonal_skills_json" id="interpersonal_skills_json" value="">
+        <table id="interpersonal_skills_table" class="interpersonal_skills">
+            <tr>
+                <th scope="col">成長</th>
+                <th scope="col" style="width: 150px;">技能名</th>
+                <th scope="col" style="width: 50px;">初期値</th>
+                <th scope="col" style="width: 50px;">職業P</th>
+                <th scope="col" style="width: 50px;">興味P</th>
+                <th scope="col" style="width: 50px;">成長分</th>
+                <th scope="col" style="width: 50px;">その他</th>
+                <th scope="col" style="width: 50px;">合計</th>
+            </tr>
+            {% for skill in skills.interpersonal_skills %}
+            {% include "investigator/skill.html" %}
+            {% endfor %}
+        </table>
+        <div style="margin-left: 463px;">
+            <button type="button" onclick="add_interpersonal_skills()">追加</button>
+        </div>
+    </details>
+
+    <br>
+
+    <details open="true">
+        <summary>知識技能</summary>
+        <input type="hidden" name="knowledge_skills_json" id="knowledge_skills_json" value="">
+        <table id="knowledge_skills_table" class="knowledge_skills">
+            <tr>
+                <th scope="col">成長</th>
+                <th scope="col" style="width: 150px;">技能名</th>
+                <th scope="col" style="width: 50px;">初期値</th>
+                <th scope="col" style="width: 50px;">職業P</th>
+                <th scope="col" style="width: 50px;">興味P</th>
+                <th scope="col" style="width: 50px;">成長分</th>
+                <th scope="col" style="width: 50px;">その他</th>
+                <th scope="col" style="width: 50px;">合計</th>
+            </tr>
+            {% for skill in skills.knowledge_skills %}
+            {% include "investigator/skill.html" %}
+            {% endfor %}
+        </table>
+        <div style="margin-left: 463px;">
+            <button type="button" onclick="add_knowledge_skills()">追加</button>
+        </div>
+    </details>
+</details>

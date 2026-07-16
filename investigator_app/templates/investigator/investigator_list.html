@@ -1,0 +1,93 @@
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <h1>探索者一覧</h1>
+        <button onclick="save_investigator_all()">すべての探索者データをjson保存</button>
+        <h2>一覧</h2>
+        <table>
+            <tr>
+                <th scope="row"></th>
+                <th scope="row" style="width: 120px;">名前</th>
+                <th scope="row">PL</th>
+                <th scope="row">性別</th>
+                <th scope="row">年齢</th>
+                <th scope="row">ロスト</th>
+                <th scope="row">現在正気度</th>
+                <th scope="row" style="width: 40px;">STR</th>
+                <th scope="row" style="width: 40px;">CON</th>
+                <th scope="row" style="width: 40px;">POW</th>
+                <th scope="row" style="width: 40px;">DEX</th>
+                <th scope="row" style="width: 40px;">APP</th>
+                <th scope="row" style="width: 40px;">SIZ</th>
+                <th scope="row" style="width: 40px;">INT</th>
+                <th scope="row" style="width: 40px;">EDU</th>
+                <th scope="row" style="width: 40px;">HP</th>
+                <th scope="row" style="width: 40px;">MP</th>
+                <th scope="row" style="width: 40px;">SAN</th>
+                <th scope="row" style="width: 40px;">IDE</th>
+                <th scope="row" style="width: 40px;">幸運</th>
+                <th scope="row" style="width: 40px;">知識</th>
+            </tr>
+            {% for investigator in investigators %}
+            <tr>
+                <td style="justify-content: center;">
+                    <a href="{{ url_for('investigator_view', id = investigator.id) }}">
+                        <img src="{{investigator.img}}" style="object-fit: cover; object-position: top; width: 50px; height: 50px;"> 
+                    </a>
+                </td>
+                <th>
+                    {% if investigator.lost %}
+                    <a href="{{ url_for('investigator_view', id = investigator.id) }}" style="color: #EE0000; text-decoration: none;">
+                    {% else %}
+                    <a href="{{ url_for('investigator_view', id = investigator.id) }}" style="color: #0000EE; text-decoration: none;">
+                    {% endif %}
+                        <label style="font-size: 9px;">{{ investigator.furigana }}</label>
+                        <br>{{ investigator.name }}
+                    </a>
+                </th>
+                <td style="vertical-align: middle;">{{investigator.Player}}</td>
+                <td style="vertical-align: middle;">{{investigator.sex}}</td>
+                <td style="vertical-align: middle;">{{investigator.age}}</td>
+                <td style="vertical-align: middle;">
+                    {% if investigator.lost %}
+                    <div style="color: red;">×</div>
+                    {% else %}
+                    {% endif %}
+                </td>
+                <td style="vertical-align: middle;">{{investigator.san_now}}</td>
+                <td style="vertical-align: middle;">{{investigator.STR_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.CON_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.POW_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.DEX_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.APP_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.SIZ_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.INT_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.EDU_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.hp_sum}}</td>
+                <td style="vertical-align: middle;">{{investigator.mp}}</td>
+                <td style="vertical-align: middle;">{{investigator.san}}</td>
+                <td style="vertical-align: middle;">{{investigator.ide}}</td>
+                <td style="vertical-align: middle;">{{investigator.luck}}</td>
+                <td style="vertical-align: middle;">{{investigator.knowledge}}</td>
+                <td style="vertical-align: middle;">
+                    <div style="display: flex;">
+                        <form action="{{ url_for('investigator_edit', id = investigator.id) }}" method="GET">
+                            <input type="submit" value="編集">
+                        </form>
+                        <form action="{{ url_for('delete_investigator', id = investigator.id) }}" method="POST" style="margin-left: 3px;">
+                            <input class="btn btn-danger btn-sm" type="submit" value="削除">
+                        </form>
+                        <button onclick="save_investigator( '{{investigator.id}}' )" style="margin-left: 3px; height: 25px;">json保存</button>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </ul>
+        <a href="{{ url_for('index') }}">戻る</a>
+        <a href="{{ url_for('add_investigator') }}">探索者追加</a>
+    </body>
+</html>
+
+<script src="{{ url_for('static', filename='javascript/investigator_list.js') }}"></script>

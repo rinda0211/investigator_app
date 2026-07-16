@@ -1,0 +1,385 @@
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <h1>
+            {{investigator.name}}
+        </h1>
+        <div id="skills" data-skills="{{ skills }}"></div>
+        <form action="{{ url_for('investigator_edit', id=investigator.id) }}" method="POST">
+            <details open="true">
+                <summary>基本情報</summary>
+                <label for="name">名前</label>
+                <input name="name" value="{{investigator.name}}">
+
+                <label for="furigana">ふりがな</label>
+                <input name="furigana" value="{{investigator.furigana}}">
+
+                <label for="lost" style="margin-left: 150px;">ロスト</label>
+                <input type="checkbox" name="lost" {% if investigator.lost == True %}checked{% endif %}>
+
+                <br>
+
+                <label for="player">PL</label>
+                <input name="player" value="{{investigator.Player}}" style="width: 100px;">
+
+                <br>
+                
+                <label for="job">職業</label>
+                <input name="job" value="{{investigator.job}}">
+
+                <label for="age">年齢</label>
+                <input name="age" value="{{investigator.age}}">
+
+                <label for="sex">性別</label>
+                <input name="sex" value="{{investigator.sex}}">
+
+                <br>
+
+                <label for="heigt">身長</label>
+                <input name="height" value="{{investigator.height}}">
+
+                <label for="weight">体重</label>
+                <input name="weight" value="{{investigator.weight}}">
+
+                <label for="birthplace">出身</label>
+                <input name="birthplace" value="{{investigator.birthplace}}">
+
+                <br>
+
+                <label for="hair_color">髪の色</label>
+                <input name="hair_color" value="{{investigator.haircolor}}">
+
+                <label for="eye_color">瞳の色</label>
+                <input name="eye_color" value="{{investigator.eyecolor}}">
+
+                <label for="skin_color">肌の色</label>
+                <input name="skin_color" value="{{investigator.skincolor}}">
+
+                <br>
+
+                <label for="img">画像リンク</label>
+                <input name="img" value="{{investigator.img}}">
+                (GoogleDrive)
+
+                <br>
+
+                <label for="imgs_link">差分画像保存フォルダリンク</label>
+                <input name="imgs_link" value="{{investigator.imgs_link}}">
+                (GoogleDrive)
+
+                <br>
+
+                <label for="iachara_link">いあきゃらリンク</label>
+                <input name="iachara_link" value="{{investigator.iachara_link}}">
+            </details>
+            
+            <br>
+
+            <details open="true">
+                <summary>能力値</summary>
+                <table>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">STR</th>
+                        <th scope="col">CON</th>
+                        <th scope="col">POW</th>
+                        <th scope="col">DEX</th>
+                        <th scope="col">APP</th>
+                        <th scope="col">SIZ</th>
+                        <th scope="col">INT</th>
+                        <th scope="col">EDU</th>
+                        <th scope="col">HP</th>
+                        <th scope="col">MP</th>
+                        <th scope="col">正気度</th>
+                        <th scope="col">IDE</th>
+                        <th scope="col">幸運</th>
+                        <th scope="col">知識</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">能力値</th>
+                        <th>
+                            <select name="STR" id="str">
+                                <option value="0" {% if investigator.STR == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}" {% if investigator.STR == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="CON" id="con" value="{{investigator.CON}}">
+                                <option value="0" {% if investigator.CON == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}" {% if investigator.CON == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="POW" id="pow" value="{{investigator.POW}}">
+                                <option value="0" {% if investigator.POW == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}" {% if investigator.POW == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="DEX" id="dex" value="{{investigator.DEX}}">
+                                <option value="0" {% if investigator.DEX == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}" {% if investigator.DEX == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="APP" id="app" value="{{investigator.APP}}">
+                                <option value="0" {% if investigator.APP == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}" {% if investigator.APP == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="SIZ" id="siz" value="{{investigator.SIZ}}">
+                                <option value="0" {% if investigator.SIZ == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}" {% if investigator.SIZ == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="INT" id="int" value="{{investigator.INT}}">
+                                <option value="0" {% if investigator.INT == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}" {% if investigator.INT == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="EDU" id="edu" value="{{investigator.EDU}}">
+                                <option value="0" {% if investigator.EDU == 0 %}selected{% endif %}></option>
+                                {% for i in range(2, 22) %}
+                                <option value="{{ i }}" {% if investigator.EDU == i %}selected{% endif %}>
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <input name="hp" id="hp" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="mp" id="mp" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="san" id="san" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="ide" id="ide" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="luck" id="luck" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="knowledge" id="knowledge" style="width: 40px;" disabled>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">増加分</th>
+                        <th>
+                            <input type="number" name="STR_add" id="str_add" value="{{investigator.STR_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="CON_add" id="con_add" value="{{investigator.CON_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="POW_add" id="pow_add" value="{{investigator.POW_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="DEX_add" id="dex_add" value="{{investigator.DEX_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="APP_add" id="app_add" value="{{investigator.APP_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="SIZ_add" id="siz_add" value="{{investigator.SIZ_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="INT_add" id="int_add" value="{{investigator.INT_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="EDU_add" id="edu_add" value="{{investigator.EDU_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="hp_add" id="hp_add" value="{{investigator.hp_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="mp_add" id="mp_add" value="{{investigator.mp_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="san_add" id="san_add" value="{{investigator.san_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="ide_add" id="ide_add" value="{{investigator.ide_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="luck_add" id="luck_add" value="{{investigator.luck_add}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="knowledge_add" id="knowledge_add" value="{{investigator.knowledge_add}}" style="width: 40px;">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">一時的</th>
+                        <th>
+                            <input type="number" name="STR_tmp" id="str_tmp" value="{{investigator.STR_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="CON_tmp" id="con_tmp" value="{{investigator.CON_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="POW_tmp" id="pow_tmp" value="{{investigator.POW_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="DEX_tmp" id="dex_tmp" value="{{investigator.DEX_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="APP_tmp" id="app_tmp" value="{{investigator.APP_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="SIZ_tmp" id="siz_tmp" value="{{investigator.SIZ_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="INT_tmp" id="int_tmp" value="{{investigator.INT_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="EDU_tmp" id="edu_tmp" value="{{investigator.EDU_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="hp_tmp" id="hp_tmp" value="{{investigator.hp_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="mp_tmp" id="mp_tmp" value="{{investigator.mp_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="san_tmp" id="san_tmp" value="{{investigator.san_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="ide_tmp" id="ide_tmp" value="{{investigator.ide_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="luck_tmp" id="luck_tmp" value="{{investigator.luck_tmp}}" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="knowledge_tmp" id="knowledge_tmp" value="{{investigator.knowledge_tmp}}" style="width: 40px;">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">現在値</th>
+                        <th>
+                            <input type="number" name="STR_sum" id="str_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="CON_sum" id="con_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="POW_sum" id="pow_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="DEX_sum" id="dex_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="APP_sum" id="app_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="SIZ_sum" id="siz_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="INT_sum" id="int_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="EDU_sum" id="edu_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="hp_sum" id="hp_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="mp_sum" id="mp_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="san_sum" id="san_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="ide_sum" id="ide_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="luck_sum" id="luck_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="knowledge_sum" id="knowledge_sum" style="width: 40px;" disabled>
+                        </th>
+                    </tr>
+                </table>
+
+                <br>
+
+                <label for="san_now">正気度</label>
+                <input name="san_now" value="{{investigator.san_now}}" onclick="this.select();">
+                <input name="san_max" id="san_max" disabled>
+
+                <label for="ind_ins">不定</label>
+                <input name="ind_ins" id="ind_ins" disabled>
+
+                <br>
+
+                <label for="damage_bonus">ダメージボーナス</label>
+                <input name="damage_bonus" id="damage_bonus" disabled>
+            </details>
+
+            <br>
+
+            {% include "investigator/skills.html" %}
+
+            <br>
+
+            <details open="true">
+                <summary>通過シナリオ</summary>
+                <input type="hidden" name="session_list" id="session_list">
+                <table id="sessions">
+                    <tr>
+                        <th scope="col">シナリオ名</th>
+                    </tr>
+                    {% for session in sessions %}
+                    <tr>
+                        <td>
+                            <input value="{{session}}" onchange="change_session_list()">
+                            <button type="button" onclick="delete_session(this)">削除</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <button type="button" onclick="add_session()">追加</button>
+            </details>
+
+            <br>
+
+            <button type="submit" class="btn btn-primay">保存</button>
+        </form>
+        <a href="{{ url_for('index') }}">戻る</a>
+    </body>
+</html>
+
+<script src="{{ url_for('static', filename='javascript/add_investigator.js') }}"></script>

@@ -1,0 +1,697 @@
+skills_asanakauta = {
+    "battle_skills": [
+        {
+            "id": 0,
+            "name": "回避",
+            "spell": "dodge",
+            "points":{
+                "initial_points": 22,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },
+        {
+            "id": 1,
+            "name": "キック",
+            "spell": "kick",
+            "points":{
+                "initial_points": 25,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 2,
+            "name": "組み付き",
+            "spell": "grapple",
+            "points":{
+                "initial_points": 25,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 3,
+            "name": "こぶし（パンチ）",
+            "spell": "fist",
+            "points":{
+                "initial_points": 50,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 4,
+            "name": "頭突き",
+            "spell": "head_butt",
+            "points":{
+                "initial_points": 10,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 5,
+            "name": "投擲",
+            "spell": "throw",
+            "points":{
+                "initial_points": 25,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 6,
+            "name": "マーシャルアーツ",
+            "spell": "martial_arts",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 7,
+            "name": "拳銃",
+            "spell": "handgun",
+            "points":{
+                "initial_points": 20,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 8,
+            "name": "サブマシンガン",
+            "spell": "submashine_gun",
+            "points":{
+                "initial_points": 15,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 9,
+            "name": "ショットガン",
+            "spell": "shotgun",
+            "points":{
+                "initial_points": 30,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 10,
+            "name": "マシンガン",
+            "spell": "machine_gun",
+            "points":{
+                "initial_points": 15,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 11,
+            "name": "ライフル",
+            "spell": "rifle",
+            "points":{
+                "initial_points": 25,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 0,
+            "name": "マーシャルアーツ(バリツ)",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 5,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        }
+    ],
+    "search_skills": [
+        {
+            "id": 0,
+            "name": "応急手当",
+            "spell": "first_aid",
+            "points":{
+                "initial_points": 30,
+                "job_points": 20,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 1,
+            "name": "鍵開け",
+            "spell": "Locksmith",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 12,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 2,
+            "name": "隠す",
+            "spell": "conceal",
+            "points":{
+                "initial_points": 15,
+                "job_points": 20,
+                "interest_points": 18,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 3,
+            "name": "隠れる",
+            "spell": "hide",
+            "points":{
+                "initial_points": 10,
+                "job_points": 40,
+                "interest_points": 0,
+                "growth_points": 9,
+                "others_points": 0
+            }
+        },{
+            "id": 4,
+            "name": "聞き耳",
+            "spell": "listen",
+            "points":{
+                "initial_points": 25,
+                "job_points": 35,
+                "interest_points": 5,
+                "growth_points": 1,
+                "others_points": 0
+            }
+        },{
+            "id": 5,
+            "name": "忍び歩き",
+            "spell": "sneak",
+            "points":{
+                "initial_points": 10,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 6,
+            "name": "写真術",
+            "spell": "photography",
+            "points":{
+                "initial_points": 10,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 7,
+            "name": "精神分析",
+            "spell": "psychoanalysis",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 5,
+                "others_points": 5
+            }
+        },{
+            "id": 8,
+            "name": "追跡",
+            "spell": "track",
+            "points":{
+                "initial_points": 10,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 3,
+                "others_points": 0
+            }
+        },{
+            "id": 9,
+            "name": "登攀",
+            "spell": "climb",
+            "points":{
+                "initial_points": 40,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 10,
+            "name": "図書館",
+            "spell": "library_use",
+            "points":{
+                "initial_points": 25,
+                "job_points": 30,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 11,
+            "name": "目星",
+            "spell": "spot_hidden",
+            "points":{
+                "initial_points": 25,
+                "job_points": 43,
+                "interest_points": 12,
+                "growth_points": 7,
+                "others_points": 0
+            }
+        }
+    ],
+    "action_skills":[
+        {
+            "id": 0,
+            "name": "運転",
+            "spell": "drive",
+            "points":{
+                "initial_points": 20,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 1,
+            "name": "機械修理",
+            "spell": "mechanical_repair",
+            "points":{
+                "initial_points": 20,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 2,
+            "name": "重機械操作",
+            "spell": "operate_heavy_machinery",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 3,
+            "name": "乗馬",
+            "spell": "ride",
+            "points":{
+                "initial_points": 5,
+                "job_points": 0,
+                "interest_points": 53,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 4,
+            "name": "水泳",
+            "spell": "swim",
+            "points":{
+                "initial_points": 25,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 5,
+            "name": "製作",
+            "spell": "craft",
+            "points":{
+                "initial_points": 5,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 6,
+            "name": "操縦",
+            "spell": "pilot",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 7,
+            "name": "跳躍",
+            "spell": "jump",
+            "points":{
+                "initial_points": 25,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 8,
+            "name": "電気修理",
+            "spell": "electrical_repair",
+            "points":{
+                "initial_points": 10,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 9,
+            "name": "ナビゲート",
+            "spell": "navigate",
+            "points":{
+                "initial_points": 10,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 10,
+            "name": "変装",
+            "spell": "disguise",
+            "points":{
+                "initial_points": 1,
+                "job_points": 2,
+                "interest_points": 3,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        }
+    ],
+    "interpersonal_skills":[
+        {
+            "id": 0,
+            "name": "言いくるめ",
+            "spell": "fast_talk",
+            "points":{
+                "initial_points": 5,
+                "job_points": 35,
+                "interest_points": 40,
+                "growth_points": 4,
+                "others_points": 0
+            }
+        },{
+            "id": 1,
+            "name": "信用",
+            "spell": "credit_rating",
+            "points":{
+                "initial_points": 15,
+                "job_points": 27,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 2,
+            "name": "説得",
+            "spell": "persuade",
+            "points":{
+                "initial_points": 15,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 3,
+            "name": "値切り",
+            "spell": "bargain",
+            "points":{
+                "initial_points": 5,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 10,
+                "others_points": 0
+            }
+        },{
+            "id": 4,
+            "name": "母国語",
+            "spell": "own_language",
+            "points":{
+                "initial_points": 70,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 0,
+            "name": "英語",
+            "points":{
+                "initial_points": 1,
+                "job_points": 15,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 0,
+            "name": "フランス語",
+            "points":{
+                "initial_points": 1,
+                "job_points": 5,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        }
+    ],
+    "knowledge_skills":[
+        {
+            "id": 0,
+            "name": "医学",
+            "spell": "medicine",
+            "points":{
+                "initial_points": 5,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 1,
+            "name": "オカルト",
+            "spell": "occult",
+            "points":{
+                "initial_points": 5,
+                "job_points": 5,
+                "interest_points": 18,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 2,
+            "name": "化学",
+            "spell": "chemistry",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 3,
+            "name": "クトゥルフ神話",
+            "spell": "cthulhu_mythos",
+            "points":{
+                "initial_points": 0,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 4,
+                "others_points": 0
+            }
+        },{
+            "id": 4,
+            "name": "芸術(おえかき)",
+            "spell": "arts",
+            "points":{
+                "initial_points": 5,
+                "job_points": 0,
+                "interest_points": 4,
+                "growth_points": 0,
+                "others_points": -8
+            }
+        },{
+            "id": 5,
+            "name": "経理",
+            "spell": "accounting",
+            "points":{
+                "initial_points": 10,
+                "job_points": 3,
+                "interest_points": 0,
+                "growth_points": 3,
+                "others_points": 0
+            }
+        },{
+            "id": 6,
+            "name": "考古学",
+            "spell": "archaeology",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 7,
+            "name": "コンピューター",
+            "spell": "computer_use",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 4,
+                "others_points": 0
+            }
+        },{
+            "id": 8,
+            "name": "心理学",
+            "spell": "psychology",
+            "points":{
+                "initial_points": 5,
+                "job_points": 0,
+                "interest_points": 10,
+                "growth_points": 1,
+                "others_points": 0
+            }
+        },{
+            "id": 9,
+            "name": "人類学",
+            "spell": "anthropology",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 10,
+            "name": "生物学",
+            "spell": "biology",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 11,
+            "name": "地質学",
+            "spell": "geology",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 12,
+            "name": "電子工学",
+            "spell": "electronics",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 13,
+            "name": "天文学",
+            "spell": "astronomy",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 14,
+            "name": "博物学",
+            "spell": "natural_history",
+            "points":{
+                "initial_points": 10,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 15,
+            "name": "物理学",
+            "spell": "psysics",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 16,
+            "name": "法律",
+            "spell": "law",
+            "points":{
+                "initial_points": 5,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 17,
+            "name": "薬学",
+            "spell": "pharmacy",
+            "points":{
+                "initial_points": 1,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },{
+            "id": 18,
+            "name": "歴史",
+            "spell": "history",
+            "points":{
+                "initial_points": 20,
+                "job_points": 0,
+                "interest_points": 0,
+                "growth_points": 0,
+                "others_points": 0
+            }
+        },
+    ]
+}

@@ -1,0 +1,19 @@
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <h1>
+            探索者管理ツール
+        </h1>
+        <a href="{{ url_for('add_investigator') }}">探索者追加</a>
+        <a href="{{ url_for('investigator_list') }}" style="margin-left: 5px;">探索者一覧</a>
+        <a href="{{ url_for('search_investigator') }}" style="margin-left: 5px;">探索者検索</a>
+        <a href="{{ url_for('load_investigator') }}" style="margin-left: 5px;">探索者json読み込み</a>
+
+        <br><br>
+        
+        <a href="{{ url_for('add_session') }}">セッション追加</a>
+        <a href="{{ url_for('session_list') }}" style="margin-left: 5px;">セッション一覧</a>
+        <a href="{{ url_for('load_session') }}" style="margin-left: 5px;">探索者json読み込み</a>
+    </body>
+</html>

@@ -1,0 +1,377 @@
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <h1>
+            探索者追加
+        </h1>
+        <div id="skills" data-skills="{{ skills }}"></div>
+        <form action="/add_investigator" method="POST">
+            <details open="true">
+                <summary>基本情報</summary>
+                <label for="name">名前</label>
+                <input name="name">
+
+                <label for="furigana">ふりがな</label>
+                <input name="furigana">
+
+                <label for="lost" style="margin-left: 150px;">ロスト</label>
+                <input type="checkbox" name="lost">
+
+                <br>
+
+                <label for="player">PL</label>
+                <input name="player" style="width: 100px;">
+
+                <br>
+                
+                <label for="job">職業</label>
+                <input name="job">
+
+                <label for="age">年齢</label>
+                <input name="age">
+
+                <label for="sex">性別</label>
+                <input name="sex">
+
+                <br>
+
+                <label for="heigt">身長</label>
+                <input name="height">
+
+                <label for="weight">体重</label>
+                <input name="weight">
+
+                <label for="birthplace">出身</label>
+                <input name="birthplace">
+
+                <br>
+
+                <label for="hair_color">髪の色</label>
+                <input name="hair_color">
+
+                <label for="eye_color">瞳の色</label>
+                <input name="eye_color">
+
+                <label for="skin_color">肌の色</label>
+                <input name="skin_color">
+
+                <br>
+
+                <label for="img">画像リンク</label>
+                <input name="img">
+                (GoogleDrive)
+
+                <br>
+
+                <label for="imgs_link">差分画像保存フォルダリンク</label>
+                <input name="imgs_link">
+                (GoogleDrive)
+
+                <br>
+
+                <label for="iachara_link">いあきゃらリンク</label>
+                <input name="iachara_link">
+            </details>
+            
+            <br>
+
+            <details open="true">
+                <summary>能力値</summary>
+                <table>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">STR</th>
+                        <th scope="col">CON</th>
+                        <th scope="col">POW</th>
+                        <th scope="col">DEX</th>
+                        <th scope="col">APP</th>
+                        <th scope="col">SIZ</th>
+                        <th scope="col">INT</th>
+                        <th scope="col">EDU</th>
+                        <th scope="col">HP</th>
+                        <th scope="col">MP</th>
+                        <th scope="col">正気度</th>
+                        <th scope="col">IDE</th>
+                        <th scope="col">幸運</th>
+                        <th scope="col">知識</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">能力値</th>
+                        <th>
+                            <select name="STR" id="str">
+                                <option value="0"></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="CON" id="con">
+                                <option value="0"></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="POW" id="pow">
+                                <option value="0"></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="DEX" id="dex">
+                                <option value="0"></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="APP" id="app">
+                                <option value="0"></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="SIZ" id="siz">
+                                <option value="0"></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="INT" id="int">
+                                <option value="0"></option>
+                                {% for i in range(2, 19) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <select name="EDU" id="edu">
+                                <option value="0"></option>
+                                {% for i in range(2, 22) %}
+                                <option value="{{ i }}">
+                                {{ i }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <input name="hp" id="hp" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="mp" id="mp" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="san" id="san" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="ide" id="ide" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="luck" id="luck" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input name="knowledge" id="knowledge" style="width: 40px;" disabled>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">増加分</th>
+                        <th>
+                            <input type="number" name="STR_add" id="str_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="CON_add" id="con_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="POW_add" id="pow_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="DEX_add" id="dex_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="APP_add" id="app_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="SIZ_add" id="siz_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="INT_add" id="int_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="EDU_add" id="edu_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="hp_add" id="hp_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="mp_add" id="mp_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="san_add" id="san_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="ide_add" id="ide_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="luck_add" id="luck_add" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="knowledge_add" id="knowledge_add" style="width: 40px;">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">一時的</th>
+                        <th>
+                            <input type="number" name="STR_tmp" id="str_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="CON_tmp" id="con_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="POW_tmp" id="pow_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="DEX_tmp" id="dex_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="APP_tmp" id="app_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="SIZ_tmp" id="siz_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="INT_tmp" id="int_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="EDU_tmp" id="edu_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="hp_tmp" id="hp_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="mp_tmp" id="mp_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="san_tmp" id="san_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="ide_tmp" id="ide_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="luck_tmp" id="luck_tmp" style="width: 40px;">
+                        </th>
+                        <th>
+                            <input type="number" name="knowledge_tmp" id="knowledge_tmp" style="width: 40px;">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">現在値</th>
+                        <th>
+                            <input type="number" name="STR_sum" id="str_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="CON_sum" id="con_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="POW_sum" id="pow_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="DEX_sum" id="dex_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="APP_sum" id="app_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="SIZ_sum" id="siz_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="INT_sum" id="int_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="EDU_sum" id="edu_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="hp_sum" id="hp_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="mp_sum" id="mp_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="san_sum" id="san_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="ide_sum" id="ide_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="luck_sum" id="luck_sum" style="width: 40px;" disabled>
+                        </th>
+                        <th>
+                            <input type="number" name="knowledge_sum" id="knowledge_sum" style="width: 40px;" disabled>
+                        </th>
+                    </tr>
+                </table>
+
+                <br>
+
+                <label for="san_now">正気度</label>
+                <input name="san_now" value="0" onclick="this.select();">
+                <input name="san_max" id="san_max" disabled>
+
+                <label for="ind_ins">不定</label>
+                <input name="ind_ins" id="ind_ins" disabled>
+
+                <br>
+
+                <label for="damage_bonus">ダメージボーナス</label>
+                <input name="damage_bonus" id="damage_bonus" disabled>
+            </details>
+
+            <br>
+
+            {% include "investigator/skills.html" %}
+
+            <br>
+
+            <details open="true">
+                <summary>通過シナリオ</summary>
+                <input type="hidden" name="session_list" id="session_list" value="[]">
+                <table id="sessions">
+                    <tr>
+                        <th scope="col">シナリオ名</th>
+                    </tr>
+                </table>
+                <button type="button" onclick="add_session()">追加</button>
+            </details>
+
+            <br>
+
+            <button type="submit" class="btn btn-primay">追加</button>
+        </form>
+        <a href="{{ url_for('index') }}">戻る</a>
+    </body>
+</html>
+
+<script src="{{ url_for('static', filename='javascript/add_investigator.js') }}"></script>

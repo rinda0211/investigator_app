@@ -1,0 +1,241 @@
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <h1>
+            セッション追加
+        </h1>
+        <div id="investigators">
+            {% for investigator in investigators %}
+            <div>
+                <input type="hidden" value="{{investigator.id}}">
+                <input type="hidden" value="{{investigator.name}}">
+                <input type="hidden" value="{{investigator.Player}}">
+            </div>
+            {% endfor %}
+        </div>
+        <form action="{{ url_for('edit_session', id=session.id) }}" method="POST">
+            <label for="senario_name">シナリオ名</label>
+            <input name="senario_name" style="width: 200px;" value="{{session.senario_name}}">
+            <br>
+            <div>
+                <label for="date1">セッション日1</label>
+                <input type="date" name="date1" value="{{session.date1}}">
+                <br>
+                <label for="date2">セッション日2</label>
+                <input type="date" name="date2" value="{{session.date2}}">
+                <br>
+                <label for="date3">セッション日3</label>
+                <input type="date" name="date3" value="{{session.date3}}">
+                <br>
+                <label for="date4">セッション日4</label>
+                <input type="date" name="date4" value="{{session.date4}}">
+                <br>
+                <label for="date5">セッション日5</label>
+                <input type="date" name="date5" value="{{session.date5}}">
+                <br>
+                <label for="date6">セッション日6</label>
+                <input type="date" name="date6" value="{{session.date6}}">
+                <br>
+                <label for="date7">セッション日7</label>
+                <input type="date" name="date7" value="{{session.date7}}">
+                <br>
+                <label for="date8">セッション日8</label>
+                <input type="date" name="date8" value="{{session.date8}}">
+                <br>
+                <label for="date9">セッション日9</label>
+                <input type="date" name="date9" value="{{session.date9}}">
+                <br>
+                <label for="date10">セッション日10</label>
+                <input type="date" name="date10" value="{{session.date10}}">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="KP">KP</label>
+                <input name="KP" id="KP" onclick="this.select()" onchange="change_KP()" value="{{session.KP}}">
+                <label for="KPC">KPC</label>
+                <select name="KPC" id="KPC" onchange="change_KPC()" style="width: 150px;" value="{{session.KPC}}">
+                    <option value=""></option>
+                    {% for investigator in investigators %}
+                    <option value="{{investigator.id}}" {% if investigator.name == session.KPC %}selected{% endif %}>{{investigator.name}}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="KPC_name" id="KPC_name" value="{{session.KPC_name}}">
+            </div>
+
+            <br>
+
+            <div>
+                <div>
+                    <label for="SKP1">SKP1</label>
+                    <input name="SKP1" id="SKP1" onclick="this.select()" onchange="change_SKP1()" value="{{session.SKP1}}">
+                    <label for="SKPC1">SKPC1</label>
+                    <select name="SKPC1" id="SKPC1" onchange="change_SKPC1()" style="width: 150px;" value="{{session.SKPC1}}">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.SKPC1 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="SKPC1_name" id="SKPC1_name" value="{{session.SKPC1_name}}">
+                </div>
+                <div>
+                    <label for="SKP2">SKP2</label>
+                    <input name="SKP2" id="SKP2" onclick="this.select()" onchange="change_SKP2()" value="{{session.SKP2}}">
+                    <label for="SKPC2">SKPC2</label>
+                    <select name="SKPC2" id="SKPC2" onchange="change_SKPC2()" style="width: 150px;" value="{{session.SKPC2}}">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.SKPC2 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="SKPC2_name" id="SKPC2_name" value="{{session.SKPC2_name}}">
+                </div>
+                <div>
+                    <label for="SKP3">SKP3</label>
+                    <input name="SKP3" id="SKP3" onclick="this.select()" onchange="change_SKP3()" value="{{session.SKP3}}">
+                    <label for="SKPC3">SKPC3</label>
+                    <select name="SKPC3" id="SKPC3" onchange="change_SKPC3()" style="width: 150px;" value="{{session.SKPC3}}">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.SKPC3 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="SKPC3_name" id="SKPC3_name" value="{{session.SKPC3_name}}">
+                </div>
+            </div>
+
+            <br>
+
+            <div>
+                <div>
+                    <label for="PL1">PL1</label>
+                    <input name="PL1" id="PL1" onclick="this.select()" onchange="change_PL1()" value="{{session.PL1}}">
+                    <label for="PC1">PC1</label>
+                    <select name="PC1" id="PC1" onchange="change_PC1()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC1 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC1_name" id="PC1_name" value="{{session.PC1_name}}">
+                </div>
+                <div>
+                    <label for="PL2">PL2</label>
+                    <input name="PL2" id="PL2" onclick="this.select()" onchange="change_PL2()" value="{{session.PL2}}">
+                    <label for="PC2">PC2</label>
+                    <select name="PC2" id="PC2" onchange="change_PC2()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC2 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC2_name" id="PC2_name" value="{{session.PC2_name}}">
+                </div>
+                <div>
+                    <label for="PL3">PL3</label>
+                    <input name="PL3" id="PL3" onclick="this.select()" onchange="change_PL3()" value="{{session.PL3}}">
+                    <label for="PC3">PC3</label>
+                    <select name="PC3" id="PC3" onchange="change_PC3()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC3 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC3_name" id="PC3_name" value="{{session.PC3_name}}">
+                </div>
+                <div>
+                    <label for="PL4">PL4</label>
+                    <input name="PL4" id="PL4" onclick="this.select()" onchange="change_PL4()" value="{{session.PL4}}">
+                    <label for="PC4">PC4</label>
+                    <select name="PC4" id="PC4" onchange="change_PC4()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC4 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC4_name" id="PC4_name" value="{{session.PC4_name}}">
+                </div>
+                <div>
+                    <label for="PL5">PL5</label>
+                    <input name="PL5" id="PL5" onclick="this.select()" onchange="change_PL5()" value="{{session.PL5}}">
+                    <label for="PC5">PC5</label>
+                    <select name="PC5" id="PC5" onchange="change_PC5()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC5 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC5_name" id="PC5_name" value="{{session.PC5_name}}">
+                </div>
+                <div>
+                    <label for="PL6">PL6</label>
+                    <input name="PL6" id="PL6" onclick="this.select()" onchange="change_PL6()" value="{{session.PL6}}">
+                    <label for="PC6">PC6</label>
+                    <select name="PC6" id="PC6" onchange="change_PC6()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC6 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC6_name" id="PC6_name" value="{{session.PC6_name}}">
+                </div>
+                <div>
+                    <label for="PL7">PL7</label>
+                    <input name="PL7" id="PL7" onclick="this.select()" onchange="change_PL7()" value="{{session.PL7}}">
+                    <label for="PC7">PC7</label>
+                    <select name="PC7" id="PC7" onchange="change_PC7()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC7 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC7_name" id="PC7_name" value="{{session.PC7_name}}">
+                </div>
+                <div>
+                    <label for="PL8">PL8</label>
+                    <input name="PL8" id="PL8" onclick="this.select()" onchange="change_PL8()" value="{{session.PL8}}">
+                    <label for="PC8">PC8</label>
+                    <select name="PC8" id="PC8" onchange="change_PC8()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC8 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC8_name" id="PC8_name" value="{{session.PC8_name}}">
+                </div>
+                <div>
+                    <label for="PL9">PL9</label>
+                    <input name="PL9" id="PL9" onclick="this.select()" onchange="change_PL9()" value="{{session.PL9}}">
+                    <label for="PC9">PC9</label>
+                    <select name="PC9" id="PC9" onchange="change_PC9()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC9 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC9_name" id="PC9_name" value="{{session.PC9_name}}">
+                </div>
+                <div>
+                    <label for="PL10">PL10</label>
+                    <input name="PL10" id="PL10" onclick="this.select()" onchange="change_PL10()" value="{{session.PL10}}">
+                    <label for="PC10">PC10</label>
+                    <select name="PC10" id="PC10" onchange="change_PC10()" style="width: 150px;">
+                        <option value=""></option>
+                        {% for investigator in investigators %}
+                        <option value="{{investigator.id}}" {% if investigator.name == session.PC10 %}selected{% endif %}>{{investigator.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="PC10_name" id="PC10_name" value="{{session.PC10_name}}">
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-primay">追加</button>
+        </form>
+        <a href="{{ url_for('index') }}">戻る</a>
+    </body>
+</html>
+
+<script src="{{ url_for('static', filename='javascript/add_session.js') }}"></script>

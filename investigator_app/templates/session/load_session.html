@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #drop-area {
+            width: 1000px;
+            height: 500px;
+            border: 2px dashed #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #drop-area.dragover {
+            border-color: blue;
+            background-color: #eef;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="drop-area">
+        JSONファイルをここへドラッグしてください
+    </div>
+    <a href="{{ url_for('index') }}">戻る</a>
+
+    <script src="{{ url_for('static', filename='javascript/load_session.js') }}"></script>
+
+</body>
+</html>

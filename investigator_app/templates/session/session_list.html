@@ -1,0 +1,143 @@
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <h1>セッション一覧</h1>
+        <button onclick="save_session_all()">すべてのセッションデータをjson保存</button>
+        <h2>一覧</h2>
+        <table>
+            <tr>
+                <th scope="row" style="width: 120px;">セッション名</th>
+                <th scope="row">セッション日</th>
+                <th scope="row">KP</th>
+                <th scope="row">KPC</th>
+                <th scope="row">SKP</th>
+                <th scope="row">PL1</th>
+                <th scope="row">PC1</th>
+                <th scope="row">PL2</th>
+                <th scope="row">PC2</th>
+                <th scope="row">PL3</th>
+                <th scope="row">PC3</th>
+                <th scope="row">PL4</th>
+                <th scope="row">PC4</th>
+                <th scope="row">PL5</th>
+                <th scope="row">PC5</th>
+                <th scope="row">PL6</th>
+                <th scope="row">PC6</th>
+            </tr>
+            {% for session in sessions %}
+            <tr>
+                <th scope="col">
+                    <a href = "{{ url_for('edit_session', id = session.id) }}" style="color: #0000EE; text-decoration: none;">
+                        {{session.senario_name}}
+                    </a>
+                </th>
+                <td>
+                    {{session.date1}}
+
+                    {% if session.date2 %}
+                    <br>
+                    {{session.date2}}
+                    {% endif %}
+
+                    {% if session.date3 %}
+                    <br>
+                    {{session.date3}}
+                    {% endif %}
+
+                    {% if session.date4 %}
+                    <br>
+                    {{session.date4}}
+                    {% endif %}
+
+                    {% if session.date5 %}
+                    <br>
+                    {{session.date5}}
+                    {% endif %}
+
+                    {% if session.date6 %}
+                    <br>
+                    {{session.date6}}
+                    {% endif %}
+
+                    {% if session.date7 %}
+                    <br>
+                    {{session.date7}}
+                    {% endif %}
+
+                    {% if session.date8 %}
+                    <br>
+                    {{session.date8}}
+                    {% endif %}
+
+                    {% if session.date9 %}
+                    <br>
+                    {{session.date9}}
+                    {% endif %}
+
+                    {% if session.date10 %}
+                    <br>
+                    {{session.date10}}
+                    {% endif %}
+                </td>
+                <td>{{session.KP}}</td>
+                <td>
+                    {% if session.KPC_id %}
+                    <a href="{{ url_for('investigator_view', id = session.KPC_id) }}" style="color: #0000EE; text-decoration: none;">{{session.KPC}}</a>
+                    {% endif %}
+                </td>
+                <td>{{session.SKP}}</td>
+                <td>{{session.PL1}}</td>
+                <td>
+                    {% if session.PC1_id %}
+                    <a href="{{ url_for('investigator_view', id = session.PC1_id) }}" style="color: #0000EE; text-decoration: none;">{{session.PC1}}</a>
+                    {% endif %}
+                </th>
+                </td>
+                <td>{{session.PL2}}</td>
+                <td>
+                    {% if session.PC2_id %}
+                    <a href="{{ url_for('investigator_view', id = session.PC2_id) }}" style="color: #0000EE; text-decoration: none;">{{session.PC2}}</a>
+                    {% endif %}
+                </td>
+                <td>{{session.PL3}}</td>
+                <td>
+                    {% if session.PC3_id %}
+                    <a href="{{ url_for('investigator_view', id = session.PC3_id) }}" style="color: #0000EE; text-decoration: none;">{{session.PC3}}</a>
+                    {% endif %}
+                </td>
+                <td>{{session.PL4}}</td>
+                <td>
+                    {% if session.PC4_id %}
+                    <a href="{{ url_for('investigator_view', id = session.PC4_id) }}" style="color: #0000EE; text-decoration: none;">{{session.PC4}}</a>
+                    {% endif %}
+                </td>
+                <td>{{session.PL5}}</td>
+                <td>
+                    {% if session.PC5_id %}
+                    <a href="{{ url_for('investigator_view', id = session.PC5_id) }}" style="color: #0000EE; text-decoration: none;">{{session.PC5}}</a>
+                    {% endif %}
+                </td>
+                <td>{{session.PL6}}</td>
+                <td>
+                    {% if session.PC6_id %}
+                    <a href="{{ url_for('investigator_view', id = session.PC6_id) }}" style="color: #0000EE; text-decoration: none;">{{session.PC6}}</a>
+                    {% endif %}
+                </td>
+                <td style="vertical-align: middle;">
+                    <div style="display: flex;">
+                        <form action="{{ url_for('delete_session', id = session.id) }}" method="POST" style="margin-left: 3px;">
+                            <input class="btn btn-danger btn-sm" type="submit" value="削除">
+                        </form>
+                            <button onclick="save_session( '{{session.id}}' )" style="margin-left: 3px; height: 25px;">json保存</button>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </ul>
+        <a href="{{ url_for('index') }}">戻る</a>
+    </body>
+</html>
+
+<script src="{{ url_for('static', filename='javascript/session_list.js') }}"></script>

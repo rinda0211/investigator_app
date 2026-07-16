@@ -1,0 +1,33 @@
+<tr>
+    <td>
+        <input type="checkbox" value="{{skill.id}}">
+    </td>
+    <th scopre="row" style="font-size: 15px; font-weight: normal;">
+        <input  value="{{skill.name}}" onclick="this.select();" style="width: 150px; border: 0px; text-align: center;">
+    </th>
+    <td>
+        <input type="number" id="{{skill.spell}}_initial_points" value="{{skill.points.initial_points}}" onclick="this.select();" style="width: 50px;" disabled>
+    </td>
+    <td>
+        <input type="number" value="{{skill.points.job_points}}" onclick="this.select();" style="width: 50px;">
+    </td>
+    <td>
+        <input type="number" value="{{skill.points.interest_points}}" onclick="this.select();" style="width: 50px;">
+    </td>
+    <td>
+        <input type="number" value="{{skill.points.growth_points}}" onclick="this.select();" style="width: 50px;">
+    </td>
+    <td>
+        <input type="number" value="{{skill.points.others_points}}" onclick="this.select();" style="width: 50px;">
+    </td>
+    <td>
+        <input type="number" id="{{skill.spell}}_sum_points" style="width: 50px;" disabled>
+    </td>
+    <td>
+    {% if skill.spell != "" %}
+        <input type="hidden" value="{{skill.spell}}">
+    {% else %}
+        <button type="button" onclick="delete_skills(this)">削除</button>
+    {% endif %}
+    </td>
+</tr>

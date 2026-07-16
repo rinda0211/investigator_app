@@ -1,0 +1,154 @@
+<html lang="ja">
+    <head>
+    </head>
+    <body>
+        <h1>検索</h1>
+        <form action="/search" method="POST" style="font-size: 15px;">
+            <h2>基本情報</h2>
+            <div>
+                <label for="name">名前</label>
+                <input name="name">
+                <br>
+                <label for="Player">PL</label>
+                <input name="Player">
+            </div>
+            <div>
+                <label for="age">年齢</label>
+                <input type="number" name="age" style="width: 50px;">
+                <select name="age_option">
+                    <option value="0">一致</option>
+                    <option value="1" selected>以上</option>
+                    <option value="2">以下</option>
+                </select>
+                <label for="sex" style="margin-left: 3px;">性別</label>
+                <input name="sex" style="width: 60px;">
+            </div>
+
+            <h2>ステータス</h2>
+            <label for="STR">STR</label>
+            <input type="number" name="STR" style="width: 50px;">
+            <select name="STR_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="CON">CON</label>
+            <input type="number" name="CON" style="width: 50px;">
+            <select name="CON_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="POW">POW</label>
+            <input type="number" name="POW" style="width: 50px;">
+            <select name="POW_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="DEX">DEX</label>
+            <input type="number" name="DEX" style="width: 50px;">
+            <select name="DEX_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <br>
+            <label for="APP">APP</label>
+            <input type="number" name="APP" style="width: 50px;">
+            <select name="APP_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="SIZ">SIZ</label>
+            <input type="number" name="SIZ" style="width: 50px;">
+            <select name="SIZ_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="INT">INT</label>
+            <input type="number" name="INT" style="width: 50px;">
+            <select name="INT_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="EDU">EDU</label>
+            <input type="number" name="EDU" style="width: 50px;">
+            <select name="EDU_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+
+            <br><br>
+
+            <label for="hp">HP</label>
+            <input type="number" name="hp" style="width: 50px;">
+            <select name="hp_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="mp">MP</label>
+            <input type="number" name="mp" style="width: 50px;">
+            <select name="mp_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="ide">アイデア</label>
+            <input type="number" name="ide" style="width: 50px;">
+            <select name="ide_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="luck">幸運</label>
+            <input type="number" name="luck" style="width: 50px;">
+            <select name="luck_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+            <label for="knowledge">知識</label>
+            <input type="number" name="knowledge" style="width: 50px;">
+            <select name="knowledge_option">
+                <option value="0">一致</option>
+                <option value="1" selected>以上</option>
+                <option value="2">以下</option>
+            </select>
+
+            <h2>技能</h2>
+            <div id="skill_condition">
+                <input type="hidden" name="skill_conditions" id="skill_conditions" class="skill_conditions">
+                <div>
+                    <input name="skill1_name" style="width: 100px;">
+                    <input name="skill1_value" type="number" style="width: 50px;">
+                    <select name="skill1_option">
+                        <option value="0">一致</option>
+                        <option value="1" selected>以上</option>
+                        <option value="2">以下</option>
+                    </select>
+                </div>   
+            </div>
+            <div style="margin-left: 208px; margin-top: 5px;">
+                <button type="button" onclick="add_skill_condition()">追加</button>
+            </div>
+
+            <br>
+
+            <button type="submit" class="btn btn-primay">検索</button>
+        </form>
+
+        <a href="{{ url_for('index') }}">メニューに戻る</a>
+        <br>
+        <a href="{{ url_for('investigator_list') }}">探索者一覧</a>
+        <br>
+        <a href="{{ url_for('add_investigator') }}">探索者追加</a>
+    </body>
+</html>
+
+<script src="{{ url_for('static', filename='javascript/search_investigator.js') }}"></script>
