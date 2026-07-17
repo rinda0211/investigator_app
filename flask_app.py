@@ -1,7 +1,10 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config.from_object('investigator_app.config')
 
-@app.route("/")
-def hello():
-    return "こんにちは！これはRenderで公開されたアプリです。"
+db = SQLAlchemy(app)
+from .models import investigator
+
+import investigator_app.views
